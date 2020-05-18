@@ -3,47 +3,92 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <style>
+        input { font-size: 21px; };
+        table, th, td {
+            border: 1px solid white;
+            style="width:50%;"
+        };
+
+
+    </style>
     <title>Add Customer details</title>
 </head>
 <body>
-<h2 >Add new customer details </h2>
-<div >
-    <div >
+<h2>Add new customer details </h2>
+<div>
+    <div>
         <div>
             <h3>
-            <form action="#" method="post" th:action="@{/}" th:object="${customer}">
-                <div style="border: 1px;">
-                    <div  >
-                        <label for="firstName">First Name</label>
-                        <input type="text" style="width: 300px;"  th:field="*{firstName}" id="firstName" placeholder="firstName">
-                    </div>
-                    <div >
-                        <label for="lastName" >Last Name</label>
-                        <input type="text" style="width: 300px;" th:field="*{lastName}" id="lastName" placeholder="lastName">
-                    </div>
-                    <div >
-                        <label for="dateOfBirth" >Date Of Birth</label>
-                        <input type="text" style="width: 300px;" th:field="*{{dateOfBirth}}" id="dateOfBirth" placeholder="yyyy-mm-dd">
-                    </div>
-                    <div >
-                        <label for="policyNumber" >Policy Number</label>
-                        <input type="text" style="width: 300px;" th:field="*{policyNumber}" id="policyNumber" placeholder="policyNumber">
-                    </div>
-                    <div >
-                        <label for="address" >Address</label>
-                        <input type="text" style="width: 300px;" th:field="*{address}" id="address" placeholder="address">
-                    </div>
-                    <div >
-                        <label for="postCode" >Post Code</label>
-                        <input type="text" style="width: 300px;" th:field="*{postCode}" id="postCode" placeholder="postCode">
-                    </div>
-                </div>
-                <div >
-                    <div >
+                <form action="#" method="post" th:action="@{/}" th:object="${customer}">
+                    <table>
+                        <tbody>
+                        <tr>
+                            <td>
+                                <div>
+                                    <div>
+                                        <label for="firstName">First Name</label>
+                                        <input type="text" style="width: 300px;" th:field="*{firstName}" id="firstName"
+                                               placeholder="firstName">
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div>
+                                    <label for="lastName">Last Name</label>
+                                    <input type="text" style="width: 300px;" th:field="*{lastName}" id="lastName"
+                                           placeholder="lastName">
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div>
+                                    <label for="dateOfBirth">Date Of Birth</label>
+                                    <input type="text" style="width: 300px;" th:field="*{{dateOfBirth}}"
+                                           id="dateOfBirth"
+                                           placeholder="yyyy-mm-dd">
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div>
+                                    <label for="policyNumber">Policy Number</label>
+                                    <input type="text" style="width: 300px;" th:field="*{policyNumber}"
+                                           id="policyNumber"
+                                           placeholder="policyNumber">
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div>
+                                    <label for="address">Address</label>
+                                    <input type="text" style="width: 300px;" th:field="*{address}" id="address"
+                                           placeholder="address">
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div>
+                                    <label for="postCode">Post Code</label>
+                                    <input type="text" style="width: 300px;" th:field="*{postCode}" id="postCode"
+                                           placeholder="postCode">
+                                </div>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+
+                    <div>
                         <input type="submit" value="Submit">
                     </div>
-                </div>
-            </form>
+
+                </form>
             </h3>
         </div>
     </div>
