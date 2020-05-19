@@ -4,23 +4,91 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <style>
+        input { font-size: 20px; };
         table, th, td {
             border: 1px solid white;
             style="width:50%;"
+        };
+         .left-div {
+            float: left;
+            width: 100px;
+            height: 20px;
+            margin-right: 8px;
+        }
+        .right-div {
+            margin-left: 108px;
         }
 
-
-
     </style>
-    <title>Customer details</title>
+    <title>Search</title>
 </head>
 <body>
+<h2>Customer Search</h2>
 <div>
     <div>
+        <div class="left-div">
+            <form action="#" method="post" th:action="@{/}" th:object="${customer}">
+                <table>
+                    <tbody>
+                    <tr>
+                        <td>
+                            <div>
+                                <label for="lastName">Last Name</label>
+                                <input type="text" style="width: 300px;" th:field="*{lastName}" id="lastName"
+                                       placeholder="Last Name">
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div>
+                                <label for="dateOfBirth">Date Of Birth</label>
+                                <input type="text" style="width: 300px;" th:field="*{{dateOfBirth}}"
+                                       id="dateOfBirth"
+                                       placeholder="yyyy-mm-dd">
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div>
+                                <label for="policyNumber">Policy Number</label>
+                                <input type="text" style="width: 300px;" th:field="*{policyNumber}"
+                                       id="policyNumber"
+                                       placeholder="Policy Number">
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div>
+                                <label for="postCode">Post Code</label>
+                                <input type="text" style="width: 300px;" th:field="*{postCode}" id="postCode"
+                                       placeholder="Post Code">
+                            </div>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+                &nbsp;
+                <div class="left-div" style="width: 70px; height: 0px;">
+                    <input type="submit" value="search">
+                </div>
+            </form>
+        </div>
         <div>
-            <div>
-                <h2>Customer details </h2>
+            <div class="right-div">
+                <a href="/customer">
+                    <button>Customer List</button>
+                </a>
+            </div>
+            &nbsp;
 
+            <div id="message" th:if="${customers==null}">
+                <h3><span>Customer details not found!</span></h3>
+            </div>
+
+            <div th:if="${customers!=null and !customers.empty}">
                 <table id="customer">
                     <h3>
                         <thead>
@@ -42,20 +110,9 @@
                         <td th:text="${customer.policyNumber}"></td>
                         <td th:text="${customer.address}"></td>
                         <td th:text="${customer.postCode}"></td>
-                        <form action="#" method="post" th:action="@{/} + ${customer.id}">
-                            <td><input type="submit" value="delete"></td>
-                        </form>
                     </tr>
                     </tbody>
                 </table>
-
-                <div>
-                    <div>
-                        <a href="/add">
-                            <button>Add new customer</button>
-                        </a>
-                    </div>
-                </div>
             </div>
         </div>
     </div>

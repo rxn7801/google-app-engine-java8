@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.sample.insurance;
+package com.sample.java8;
 
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;

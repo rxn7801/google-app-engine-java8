@@ -1,4 +1,4 @@
-package com.sample.insurance.model;
+package com.sample.java8.model;
 
 import lombok.Data;
 import org.springframework.format.annotation.DateTimeFormat;
