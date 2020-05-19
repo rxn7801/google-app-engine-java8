@@ -9,10 +9,10 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.sample</groupId>
-	<artifactId>InsuranceApp</artifactId>
+	<artifactId>app-engine-java8-demo-app</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>InsuranceApp</name>
-	<description>Demo project for Spring Boot</description>
+	<name>app-engine-java8-demo-app</name>
+	<description>google-app-engine-java8-demo-app</description>
 	<packaging>war</packaging>
 
 	<properties>
